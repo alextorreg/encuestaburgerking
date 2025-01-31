@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My BK Experience</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F8E8D7;
+            text-align: left;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+        .logo {
+            width: 180px;
+            position: absolute;
+            left: -20px;
+            top: 10px;
+        }
+        .title {
+            width: 220px;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            max-width: 600px;
+            margin: 80px auto 40px;
+            border-radius: 0px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding-bottom: 200px;
+        }
+        .code {
+            font-weight: bold;
+            font-size: 20px;
+            color: black;
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons img {
+            width: 30px;
+            margin: 5px;
+        }
+        .connect {
+            display: block;
+            margin: 20px 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="imagenes/logo.png" alt="BK Logo" class="logo">
+        <img src="imagenes/title.png" alt="MY BK EXPERIENCE" class="title">
+    </div>
+    <div class="container">
+        <p>Gracias por completar la encuesta. A BURGER KING® le gustaría invitarte a volver y visitar nuestros restaurantes. No olvides presentar la oferta que aparece en el ticket de caja en tu próxima visita. Debes escribir el siguiente código en el ticket de caja.</p>
+        <p class="code">Código de validación: <span id="validationCode"></span></p>
+        <p>Muchas gracias por su participación.</p>
+        <p>‎ </p>
+        <p>Mantente conectado.</p>
+        <img src="imagenes/connect.png" alt="Connect to BK" class="connect">
+        <div class="social-icons">
+            <img src="imagenes/facebook.png" alt="Facebook">
+            <img src="imagenes/twitter.png" alt="Twitter">
+        </div>
+    </div>
+    <script>
+        function generateCode() {
+            let randomNumbers = Math.floor(1000 + Math.random() * 9000); // Genera un número aleatorio de 4 cifras
+            return "BB1" + randomNumbers;
+        }
+        
+        document.getElementById("validationCode").innerText = generateCode();
+    </script>
+</body>
+</html>
